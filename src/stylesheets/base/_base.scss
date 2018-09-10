@@ -1,0 +1,98 @@
+*,
+:before,
+:after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background-color: $white;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 1rem;
+  padding-right: 0;
+
+  @include media($medium-screen-up) {
+    align-items: center;
+  }
+}
+
+.nav__menu {
+  display: none;
+
+  &.is-active {
+    position: fixed;
+    background-color: $white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+  }
+
+  @include media($medium-screen-up) {
+    display: block;
+    display: none;
+  }
+}
+
+.menu {
+  display: block;
+  text-align: center;
+
+  @include list-reset;
+  @include media($medium-screen-up) {
+    display: flex;
+  }
+}
+
+.menu__item {
+  display: block;
+}
+
+.menu__link {
+  display: block;
+  color: $black;
+  padding: 1rem;
+}
+
+.nav__menu-icon {
+  display: flex;
+  position: relative;
+  z-index: 1;
+
+  @include media($medium-screen-up) {
+    display: none;
+  }
+}
+
+footer {
+  padding: 1rem;
+  display: flex;
+  // justify-content: center;
+  // align-items: center;
+  margin-top: auto;
+  display: none;
+}
+
+.text-container {
+  @include flow;  
+}
+
+.text {
+  font-weight: 400;
+  font-size: 17px;
+}
